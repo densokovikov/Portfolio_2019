@@ -1,0 +1,84 @@
+// colors-link
+$link_white:#fff;
+$link_gray:#64767e;
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+//common_styles_nav
+html,
+body{
+  min-height: 100%;
+  font-size: 16px;
+  font-family: "RobotoMedium", Arial, sans-serif;
+  position: relative;
+}
+
+/*--------soc__icons---------*/
+
+.socials__list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.socials__item {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 20px;
+  opacity: 0.8;
+}
+
+.socials__link{
+  text-decoration: none;
+}
+
+/*----------navigations-------*/
+.nav__list{
+  list-style: none;
+  display: table;
+  position: absolute;
+  bottom:0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.nav__item{
+  display: table-cell;
+  padding:0;
+  margin: 0;
+  cursor: pointer;
+  text-align:center;
+  overflow: hidden;
+}
+
+.nav__link {
+  text-decoration: none;
+  height: 45px;
+  line-height: 45px;
+  display: block;
+  color: $link_white;
+  overflow: hidden;
+}
+
+
+/*-------footer__welcome---------*/
+
+.page-footer {
+  height: 80px;
+  text-align: center;
+  margin-top:-80px;
+}
+
+.page-footer__text{
+  font: 400 16px;
+  font-family: "RobotoLight";
+  color:$link_white;
+  opacity: .8;
+}
+

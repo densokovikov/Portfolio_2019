@@ -1,0 +1,66 @@
+extends ../_template
+block content
+	.welcome-wrapper
+		.auth
+				a.auth__link Авторизация
+		.info
+			.card-front.info-flap
+				.card-front__ava
+					img(src="../assets/img/foto_ava.jpg").card-front__ava-foto
+				.card-front__name Соковиков Денис
+				.card-front__descr Личный сайт разработчика
+				ul.socials__list
+					li.socials__item
+						a.socials__link(href="https://vk.com" target="_blank")
+							svg.icon.vk
+								use(xlink:href='../assets/img/sprite.svg#vk')
+					li.socials__item
+						a.socials__link(href="https://githab.com" target="_blank")
+							svg.icon.github
+								use(xlink:href='../assets/img/sprite.svg#github')
+					li.socials__item
+						a.socials__link(href="https://www.linkedin.com" target="_blank")
+							svg.icon.in
+								use(xlink:href='../assets/img/sprite.svg#in')
+				nav.nav.front-nav
+					ul.nav__list.front-nav__list
+						li.nav__item.front-nav__item
+							a(href="").nav__link Мои Работы
+						li.nav__item.front-nav__item
+							a(href="").nav__link Обо мне
+						li.nav__item.front-nav__item
+							a(href="").nav__link Блог
+			.card-back.info-flap
+				.card-back__title Авторизируйтесь
+				form.form
+					.form__body
+						.form__wrap
+							.form__box
+								svg.icon.login
+									use(xlink:href='../assets/img/sprite.svg#login')
+							input(type="text" placeholder="логин").input
+						.form__wrap
+							.form__box
+								svg.icon.pass
+									use(xlink:href='../assets/img/sprite.svg#password')
+							input(type="text" placeholder="пароль").input
+						input#man(type="checkbox").input-hitten
+						label.label.label_man(for="man")
+							span.label__check-icons
+								svg.icon.chk
+									use(xlink:href="../assets/img/sprite.svg#check")
+							span.label__check-text я человек
+						.form__robot Вы точно не робот
+							.form__radion-buttons
+								input#yes(type='radio' name='sure' value='yes').radion-button__btn
+								label(for='yes').radion-button_enter Да
+								input#no(type='radio' name='sure' value='no').radion-button__btn
+								label.radion-button_enter(for='no') Не уверен
+				ul.nav__list.card-back__list
+					li.nav__item.card-back__item
+						a(href="").nav__link На главную
+					li.nav__item.card-back__item
+						a(href="").nav__link Войти
+
+	.page-footer
+		.page-footer__text ©Денис Соковиков | создано с любовью в LoftSchol 	|2018

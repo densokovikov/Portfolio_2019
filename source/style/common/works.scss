@@ -1,0 +1,24 @@
+@import "__common.scss";
+@import "_header.scss";
+//works page
+.my_work_title {
+  font-family: "SansusWebissimoRegular", sans-serif;
+  color: #373d41;
+  font-size: 60px;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding-top: 23px;
+  text-align: center;
+  z-index: 3;
+  &:before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    margin-left: -50px;
+    width: 40px;
+    height: 14px;
+    margin-top: 4px;
+    //background: url("../img/left_title_2.png");
+  }
+}

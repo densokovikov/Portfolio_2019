@@ -1,0 +1,361 @@
+//welcome page
+@import "__common";
+
+html,
+body{
+  height: 100%;
+  font-size: 16px;
+  font-family: "RobotoMedium", Arial, sans-serif;
+  position: relative;
+}
+
+.welcome-wrapper{
+  height: 100%;
+  position: relative;
+  background: url("../img/welcome-wrapper.jpg") top left;
+
+}
+/*----auth---*/
+.auth{
+  width: 178px;
+  height: 43px;
+  border: 1px solid $link_white;
+  text-align:center;
+  font: 500 16px/43px roboto;
+  position:relative;
+  float:right;
+  margin-right:100px;
+  margin-top: 40px;
+  border-radius:5px;
+}
+
+.auth:hover{
+  background-color: $link_white;
+}
+
+.auth__link:hover{
+  color:#d28f26;
+  text-decoration: none;
+  display: block;
+  //font:400 18px/24px "BERNIERDRegular";
+}
+
+/*-----info_block-----*/
+.info{
+  position: absolute;
+  width: 380px;
+  height: 395px;
+  margin: auto;
+  padding: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 5px;
+  background: rgba($link_white, .6);
+  text-align:center;
+  transform-origin: top center;
+  transition: -webkit-transform 1s;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 2s;
+}
+
+/*---переворашка----*/
+.flap{
+  transform: rotateY( 180deg );
+  transition: 2s;
+}
+
+.clicked {
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s;
+}
+
+.info-flap{
+  backface-visibility: hidden;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  border-color: #d7bf9b;
+  background: rgba($link_white, .6);
+  border-radius:5px;
+}
+
+.card-front{
+  transform: rotateY(0deg);
+  display: block;
+  z-index:2;
+}
+
+.card-front__ava{
+  margin: 40px auto 20px;
+  padding: 0;
+  position: relative;
+  width: 141px;
+  height: 141px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.card-front__ava-foto{
+  max-width: 100%;
+  height: 100%;
+}
+
+.card-front__name{
+  margin-bottom: 10px;
+  font:500 28px/34px "roboto";
+}
+
+.card-front__descr{
+  opacity: 0.8;
+  font: 400 16px/24px "RobotoBlack";
+  margin-bottom: 25px;
+}
+/*---------icons-------*/
+.icon {
+  width: 25px;
+  height: 25px;
+  fill: #c4cbcd;
+}
+
+.vk,.github,.in{
+  fill: #00bfa5;
+  opacity:.5;
+  &:hover{
+    opacity:1;
+  }
+}
+// /*-------welcome_menu---------*/
+
+.front-nav{
+  width: 380px;
+  overflow: hidden;
+}
+
+.nav__item.front-nav__item{
+  width: 33.333%;
+  background: rgba(#00bfa5,.85);
+  border-right: 1px solid rgba(#e4c98f, .5);
+  &:hover{
+    background: rgba(#00bfa5,1);
+  }
+  &:last-child{
+    border: none;
+  }
+}
+
+.card-back{
+  z-index: 1;
+  transform: rotateY(180deg);
+ }
+
+.card-back__title{
+  position: relative;
+  color: #455a64;
+  font: 400 30px/41px "BERNIERDRegular";
+  margin-bottom: 40px;
+  margin-top: 40px;
+  &:before{
+    content:'';
+    width: 21px;
+    height: 10px;
+    background: url(../img/card-back__title.png) no-repeat center;
+    position: absolute;
+    opacity: .4;
+    top: 45%;
+    left: 20px;
+  }
+  &:after{
+    content:'';
+    width: 21px;
+    height: 10px;
+    background: url(../img/card-back__title.png) no-repeat center;
+    position: absolute;
+    opacity: .4;
+    top: 45%;
+    right: 20px;
+  }
+}
+
+.form{
+  display: block;
+}
+
+.form__body{
+  padding: 0 20px;
+}
+
+.form__wrap{
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form__box{
+  width: 45px;
+  height: 45px;
+  background: #f0efe9;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align:middle;
+  margin-bottom:2px;
+}
+
+.input{
+  width: 270px;
+  height: 45px;
+  margin-bottom: 2px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow: hidden;
+  padding: 0 0 0 20px;
+  font: 400 16px roboto;
+  color: #373e42;
+  border: 0;
+  outline: 0;
+  display: inline-block;
+  vertical-align:middle;
+  margin-left: -5px;
+}
+.svg_icons{
+  width: 12px;
+  height: 9px;
+  display: none;
+}
+
+.login,.pass{
+  width: 15px;
+  height: 17px;
+  padding-top:13px;
+  fill:rgba(#C4CBCD,1);
+}
+
+.input-hitten{
+  display: none;
+}
+
+
+.label{
+  width: 100%;
+  vertical-align:top;
+  padding-bottom: 20px;
+  position: relative;
+  cursor:pointer;
+}
+
+.label__check-icons{
+  content: '';
+  display: inline-block;
+  width: 21px;
+  height: 20px;
+  margin-right: 11px;
+  //box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+  //background-color: transparent;
+  border-radius: 2px;
+  color:$link_white;
+  transition: all .2s;
+  border: 1px solid red;
+  box-shadow: none;
+  background:#00bfa5;
+}
+
+
+#man:checked + .label__check-icons{
+  border: 0;
+  background-color: #00bfa5;
+  box-shadow: none;
+}
+
+#man:checked + .label__check-icons.chk{
+  fill:#542124;
+  display: block;
+}
+
+.label__check-icons.chk{
+  width: 12px;
+  height: 9px;
+  padding: 5px;
+  display: none;
+}
+
+
+
+.label__check-text{
+  color: $link_gray;
+  font-family: "RobotoLight", Arial, sans-serif;
+  vertical-align:top;
+  text-transform: uppercase;
+}
+/*----радио кнопки----*/
+.form__robot{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font: 400 16px roboto;
+  color: rgba($link_gray, 0.8);
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.form__radion-buttons{
+  cursor: default;
+  width: 100%;
+  text-align: center;
+  font-size: 0;
+}
+.radion-button__btn {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin: 10px 0 0 7px;
+}
+.radion-button__btn + label {
+  position: relative;
+  padding: 0 8px 0 28px;
+  cursor: pointer;
+  font: 400 16px roboto;
+  color: rgba($link_gray, .8);
+}
+.radion-button__btn + label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid $link_gray;
+  border-radius: 50%;
+  background: #FFF;
+}
+.radion-button__btn + label:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00bfa5;
+  opacity: 0;
+  transition: all .1s;
+}
+.radion-button__btn:checked + label:after {
+  opacity: 1;
+}
+
+.radion-button_enter:checked{
+  color:#00bfa5;
+}
+
+.nav__item.card-back__item{
+  width: 33.333%;
+  background: rgba(#00bfa5,.85);
+  border-right: 1px solid rgba(#e4c98f, .5);
+}
+
